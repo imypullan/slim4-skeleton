@@ -9,13 +9,20 @@
 <body>
 <h1>Todo</h1>
 <div>
-    This will display uncompleted tasks.
+    <?php foreach($tasks as $task)
+    {
+        echo '<h3>' . $task['task_name'] . '</h3>';
+        echo '<p>' . $task['task_description'] . '</p>';
+        echo '<p> Done? </p>';
+    } ?>
 </div>
 
 <div>
+    <h2>Add new task</h2>
     <form>
         <input type="text">
         <input type="text">
+        <input type="checkbox">
         <input type="submit">
     </form>
 </div>

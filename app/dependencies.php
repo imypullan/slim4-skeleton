@@ -33,5 +33,14 @@ return function (ContainerBuilder $containerBuilder) {
         return $renderer;
     };
 
+    $container['db'] = function() {
+        $db = new PDO('mysql:host=127.0.0.1;dbname=todo', 'root', 'password');
+        $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+        return $db;
+    };
+
+    $container['TasksModel'] = DI\factory('\App\Factories\TasksModelFactory');
+    $container['HomePageController'] = DI\factory('App\Factories\HomePageControllerFactory');
+
     $containerBuilder->addDefinitions($container);
 };

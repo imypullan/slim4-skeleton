@@ -4,11 +4,13 @@
     <meta charset="utf-8"/>
     <title>Todo List</title>
     <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/style.css">
 </head>
 <body>
 <h1>Todo</h1>
-
+<div>
+    This will display uncompleted tasks.
+</div>
 
 <div>
     <form>

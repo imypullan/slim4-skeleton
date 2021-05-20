@@ -13,6 +13,9 @@ class EditPageController {
     }
     public function __invoke(Request $request, Response $response, $args)
     {
-        return $this->view->render($response, 'edit.php', $args);
+        $data = $request->getQueryParams();
+        $taskForEdit = $data['id'];
+        $task = $this->model->getTaskForEdit($taskForEdit);
+        return $this->view->render($response, 'edit.php', ['task' => $task]);
     }
 }

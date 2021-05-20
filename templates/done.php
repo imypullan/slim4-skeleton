@@ -14,8 +14,12 @@
         $id = intval($task['id']);
         echo '<h3>' . $task['task_name'] . '</h3>';
         echo '<form action="/delete" method="get">
-            <input type="checkbox" name="id" value= '.  $id . '>
+            <input type="hidden" name="id" value= '.  $id . '>
             <input type="submit" value="delete">
+        </form>';
+        echo '<form action="/edit" method="get">
+            <input type="hidden" name="id" value= '.  $id . '>
+            <input type="submit" value="edit">
         </form>';
     } ?>
 </div>

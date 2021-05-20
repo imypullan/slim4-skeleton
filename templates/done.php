@@ -7,12 +7,11 @@
     <link rel="stylesheet" href="../public/style.css">
 </head>
 <body>
-<h1>Todo</h1>
+<h1>(Not)todo</h1>
 <div>
     <?php foreach($tasks as $task)
     {
         echo '<h3>' . $task['task_name'] . '</h3>';
-        echo '<p> Done? </p>';
     } ?>
 </div>
 

@@ -8,5 +8,6 @@ return function (App $app) {
     $container = $app->getContainer();
 
     $app->get('/', 'HomePageController');
+    $app->get('/done', 'DonePageController');
 
 };

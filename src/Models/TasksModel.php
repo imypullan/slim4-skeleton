@@ -8,7 +8,13 @@ class TasksModel {
     }
     public function getUncompletedTasks()
     {
-        $query = $this->db->prepare('SELECT * FROM `todo-list`;');
+        $query = $this->db->prepare('SELECT * FROM `todo-list` WHERE `completed` = 0;');
+        $query->execute();
+        return $query->fetchAll();
+    }
+    public function getCompletedTasks()
+    {
+        $query = $this->db->prepare('SELECT * FROM `todo-list` WHERE `completed` = 1;');
         $query->execute();
         return $query->fetchAll();
     }

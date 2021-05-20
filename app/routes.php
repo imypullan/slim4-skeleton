@@ -12,5 +12,5 @@ return function (App $app) {
     $app->get('/done', 'DonePageController');
     $app->get('/markDone', 'MarkAsCompletedController');
     $app->get('/delete', 'DeleteTaskController');
-    $app->get('/edit', 'EditTaskController');
+    $app->get('/edit', 'EditPageController');
 };

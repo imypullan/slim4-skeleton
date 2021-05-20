@@ -36,4 +36,8 @@ class TasksModel {
         $query->bindParam(':id', $deletedTask);
         $query->execute();
     }
+    public function editTask()
+    {
+
+    }
 }

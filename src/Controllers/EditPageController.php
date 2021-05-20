@@ -3,7 +3,7 @@ namespace App\Controllers;
 use App\Models\TasksModel;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
-class EditTaskController {
+class EditPageController {
     protected $model;
     protected $view;
     public function __construct(TasksModel $model, $view)

@@ -12,7 +12,7 @@ class DeleteTaskController {
     {
         $data = $request->getQueryParams();
         $deletedTask = $data['id'];
-        $this->model->markTaskAsCompleted($deletedTask);
+        $this->model->deleteTask($deletedTask);
         return $response->withHeader('Location', '/done');
     }
 }

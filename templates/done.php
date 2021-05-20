@@ -15,15 +15,6 @@
     } ?>
 </div>
 
-<div>
-    <h2>Add new task</h2>
-    <form>
-        <input type="text">
-        <input type="text">
-        <input type="checkbox">
-        <input type="submit">
-    </form>
-</div>
 
 </body>
 </html>

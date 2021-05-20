@@ -18,8 +18,10 @@ class TasksModel {
         $query->execute();
         return $query->fetchAll();
     }
-    public function markTaskCompleted()
+    public function addTask($newTask)
     {
-
+        $query = $this->db->prepare('INSERT INTO `todo-list` (`task_name`) VALUES (:task_name);');
+        $query->bindParam(':task_name', $_POST('task_name'));
+        $query->execute();
     }
 }

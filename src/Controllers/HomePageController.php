@@ -14,6 +14,7 @@ class HomePageController {
     public function __invoke(Request $request, Response $response, $args)
     {
         $tasks = $this->model->getUncompletedTasks();
-        return $this->view->render($response, 'index.php', ['tasks' => $tasks]);
+        $addNew = $this->model->addTask();
+        return $this->view->render($response, 'index.php', ['tasks' => $tasks, 'add New' => $addNew]);
     }
 }

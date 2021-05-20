@@ -13,15 +13,16 @@
     {
         echo '<h3>' . $task['task_name'] . '</h3>';
         echo 'Mark as done';
-    } ?>
+    }
+    var_dump($tasks);
+    ?>
 </div>
 
 <div>
     <h2>Add new task</h2>
-    <form>
-        <input type="text">
-        <input type="text">
-        <input type="checkbox">
+    <form action="<?php ?>" method="post">
+        <label for="task_name">Task</label>
+        <input type="text" name="task_name">
         <input type="submit">
     </form>
 </div>

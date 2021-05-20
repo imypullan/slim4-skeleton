@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <title>Todo List</title>
     <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <h1>Todo</h1>
@@ -13,7 +13,7 @@
     {
         $id = intval($task['id']);
         echo '<h3>' . $task['task_name'] . '</h3>';
-        echo '<form>
+        echo '<form action="/markDone" method="get">
             <input type="checkbox">
             <input type="hidden" name="id" value= '.  $id . '>
             <input type="submit" value="mark as done">

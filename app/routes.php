@@ -10,5 +10,5 @@ return function (App $app) {
     $app->get('/', 'HomePageController');
     $app->post('/', 'AddTaskController');
     $app->get('/done', 'DonePageController');
-    $app->get('/?id={}', 'MarkAsCompletedController');
+    $app->get('/markDone', 'MarkAsCompletedController');
 };

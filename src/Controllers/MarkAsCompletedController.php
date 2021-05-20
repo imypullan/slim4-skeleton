@@ -5,9 +5,11 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 class MarkAsCompletedController {
     protected $model;
+    protected $view;
     public function __construct(TasksModel $model)
     {
         $this->model = $model;
+
     }
     public function __invoke(Request $request, Response $response, $args)
     {

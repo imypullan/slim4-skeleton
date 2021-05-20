@@ -12,9 +12,8 @@ class EditTaskController
     }
     public function __invoke(Request $request, Response $response, $args)
     {
-        $previousPage = $request->getHeader('HTTP_REFERER');
         $taskForEdit = $request->getParsedBody();
         $this->model->updateDB($taskForEdit);
-        return $response->withHeader('Location', $previousPage);
+        return $response->withHeader('Location', '/');
     }
 }

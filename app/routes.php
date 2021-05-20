@@ -13,4 +13,6 @@ return function (App $app) {
     $app->get('/markDone', 'MarkAsCompletedController');
     $app->get('/delete', 'DeleteTaskController');
     $app->get('/edit', 'EditPageController');
+    $app->post('/editTask', 'EditTaskController');
+
 };

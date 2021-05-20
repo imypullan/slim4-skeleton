@@ -42,7 +42,8 @@ return function (ContainerBuilder $containerBuilder) {
     $container['TasksModel'] = DI\factory('\App\Factories\TasksModelFactory');
     $container['HomePageController'] = DI\factory('App\Factories\HomePageControllerFactory');
     $container['DonePageController'] = DI\factory('App\Factories\DonePageControllerFactory');
-
+    $container['AddTaskController'] = DI\factory('App\Factories\AddTaskControllerFactory');
+    $container['MarkAsCompletedController'] = DI\factory('App\Factories\MarkAsCompletedControllerFactory');
 
     $containerBuilder->addDefinitions($container);
 };

@@ -8,6 +8,7 @@ return function (App $app) {
     $container = $app->getContainer();
 
     $app->get('/', 'HomePageController');
+    $app->post('/', 'AddTaskController');
     $app->get('/done', 'DonePageController');
-
+    $app->get('/?id={}', 'MarkAsCompletedController');
 };

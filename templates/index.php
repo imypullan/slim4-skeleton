@@ -11,16 +11,23 @@
 <div>
     <?php foreach($tasks as $task)
     {
+        $id = intval($task['id']);
         echo '<h3>' . $task['task_name'] . '</h3>';
-        echo 'Mark as done';
+        echo '<form>
+            <input type="checkbox">
+            <input type="hidden" name="id" value= '.  $id . '>
+            <input type="submit" value="mark as done">
+        </form>'
+        ?>
+
+    <?php
     }
-    var_dump($tasks);
     ?>
 </div>
 
 <div>
     <h2>Add new task</h2>
-    <form action="<?php ?>" method="post">
+    <form action="/" method="post">
         <label for="task_name">Task</label>
         <input type="text" name="task_name">
         <input type="submit">

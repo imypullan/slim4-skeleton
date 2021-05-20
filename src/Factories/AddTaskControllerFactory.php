@@ -2,7 +2,7 @@
 namespace App\Factories;
 use App\Controllers\AddTaskController;
 use Psr\Container\ContainerInterface;
-class AddTaskControllerFactoryControllerFactory {
+class AddTaskControllerFactory {
     public function __invoke(ContainerInterface $container): AddTaskController
     {
         $model = $container->get('TasksModel');

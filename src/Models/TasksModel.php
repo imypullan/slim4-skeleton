@@ -21,7 +21,13 @@ class TasksModel {
     public function addTask($newTask)
     {
         $query = $this->db->prepare('INSERT INTO `todo-list` (`task_name`) VALUES (:task_name);');
-        $query->bindParam(':task_name', $_POST('task_name'));
+        $query->bindParam(':task_name', $newTask);
+        $query->execute();
+    }
+    public function markTaskAsCompleted($completedTask)
+    {
+        $query = $this->db->prepare('UPDATE `todo-list` SET `completed` = 1 WHERE `id` = :id;');
+        $query->bindParam(':id', $completedTask);
         $query->execute();
     }
 }

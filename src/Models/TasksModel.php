@@ -43,4 +43,11 @@ class TasksModel {
         $query->execute();
         return $query->fetch();
     }
+    public function updateDB($taskForEdit)
+    {
+        $query = $this->db->prepare('UPDATE `todo-list` SET `task_name` = :task_name WHERE `id` = :id;');
+        $query->bindParam(':id', $taskForEdit['id']);
+        $query->bindParam(':task_name', $taskForEdit['task_name']);
+        $query->execute();
+    }
 }

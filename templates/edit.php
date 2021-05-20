@@ -10,8 +10,8 @@
 <h1>Toedit</h1>
 <div>
     <form action="/editTask" method="post">
-        <input type="text" value="<?php echo $task['task_name']?>">
-        <input type="hidden" value="<?php $task['id']?>">
+        <input type="hidden" name="id" value="<?php echo $task['id']?>">
+        <input type="text" name="task_name" value="<?php echo $task['task_name']?>">
         <input type="submit" value="Edit">
     </form>
 </div>

@@ -12,7 +12,7 @@
     <?php foreach($tasks as $task)
     {
         echo '<h3>' . $task['task_name'] . '</h3>';
-        echo '<p> Done? </p>';
+        echo 'Mark as done';
     } ?>
 </div>
 

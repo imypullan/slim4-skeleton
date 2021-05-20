@@ -18,4 +18,8 @@ class TasksModel {
         $query->execute();
         return $query->fetchAll();
     }
+    public function markTaskCompleted()
+    {
+
+    }
 }

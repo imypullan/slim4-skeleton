@@ -14,8 +14,7 @@
         $id = intval($task['id']);
         echo '<h3>' . $task['task_name'] . '</h3>';
         echo '<form action="/markDone" method="get">
-            <input type="checkbox">
-            <input type="hidden" name="id" value= '.  $id . '>
+            <input type="checkbox" name="id" value= '.  $id . '>
             <input type="submit" value="mark as done">
         </form>'
         ?>
@@ -32,6 +31,10 @@
         <input type="text" name="task_name">
         <input type="submit">
     </form>
+</div>
+
+<div>
+    <a href="/done"><h2>See done list</h2></a>
 </div>
 
 </body>

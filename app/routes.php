@@ -11,4 +11,5 @@ return function (App $app) {
     $app->post('/', 'AddTaskController');
     $app->get('/done', 'DonePageController');
     $app->get('/markDone', 'MarkAsCompletedController');
+    $app->get('/delete', 'DeleteTaskController');
 };

@@ -12,6 +12,10 @@
     <?php foreach($tasks as $task)
     {
         echo '<h3>' . $task['task_name'] . '</h3>';
+        echo '<form action="/delete" method="get">
+            <input type="checkbox" name="id" value= '.  $task['id'] . '>
+            <input type="submit" value="mark as done">
+        </form>';
     } ?>
 </div>
 

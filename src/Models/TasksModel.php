@@ -30,4 +30,10 @@ class TasksModel {
         $query->bindParam(':id', $completedTask);
         $query->execute();
     }
+    public function deleteTask($deletedTask)
+    {
+        $query = $this->db->prepare('UPDATE `todo-list` SET `deleted` = 1 WHERE `id` = :id;');
+        $query->bindParam(':id', $deletedTask);
+        $query->execute();
+    }
 }

@@ -6,6 +6,7 @@ class EditTaskControllerFactory {
     public function __invoke(ContainerInterface $container): EditTaskController
     {
         $model = $container->get('TasksModel');
-        return new EditTaskController($model);
+        $view = $container->get('renderer');
+        return new EditTaskController($model, $view);
     }
 }

@@ -2,6 +2,11 @@
 namespace App\Factories;
 use App\Controllers\DonePageController;
 use Psr\Container\ContainerInterface;
+/**
+ * Class DonePageControllerFactory
+ * @package App\Factories
+ * @return DonePageController
+ */
 class DonePageControllerFactory {
     public function __invoke(ContainerInterface $container): DonePageController
     {

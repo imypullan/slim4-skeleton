@@ -2,6 +2,11 @@
 namespace App\Factories;
 use App\Controllers\HomePageController;
 use Psr\Container\ContainerInterface;
+/**
+ * Class HomePageControllerFactory
+ * @package App\Factories
+ * @return HomePageController
+ */
 class HomePageControllerFactory {
     public function __invoke(ContainerInterface $container): HomePageController
     {

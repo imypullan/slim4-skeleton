@@ -19,6 +19,7 @@ class EditTaskController
     {
         $taskForEdit = $request->getParsedBody();
         if ($taskForEdit != "") {
+            $taskForEdit = FILTER_SANITIZE_STRING($taskForEdit);
             $this->model->updateDB($taskForEdit);
         }
         if($taskForEdit['completed'] == 1) {

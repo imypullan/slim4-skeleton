@@ -20,7 +20,7 @@ class AddTaskController {
         $data = $request->getParsedBody();
         $newTask = $data['task_name'];
         if ($newTask != "") {
-            $newTask = FILTER_SANITIZE_STRING($newTask);
+            $newTask = filter_var($newTask, FILTER_SANITIZE_STRING);
             $this->model->addTask($newTask);
         }
         return $response->withHeader('Location', '/');

@@ -8,6 +8,10 @@ use Psr\Container\ContainerInterface;
  * @return DeleteTaskController
  */
 class DeleteTaskControllerFactory {
+    /**
+     * @param ContainerInterface $container
+     * @return DeleteTaskController
+     */
     public function __invoke(ContainerInterface $container): DeleteTaskController
     {
         $model = $container->get('TasksModel');

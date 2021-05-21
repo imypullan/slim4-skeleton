@@ -8,6 +8,10 @@ use Psr\Container\ContainerInterface;
  * @return DonePageController
  */
 class DonePageControllerFactory {
+    /**
+     * @param ContainerInterface $container
+     * @return DonePageController
+     */
     public function __invoke(ContainerInterface $container): DonePageController
     {
         $model = $container->get('TasksModel');

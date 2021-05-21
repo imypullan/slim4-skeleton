@@ -8,6 +8,10 @@ use App\Models\TasksModel;
  * @return TasksModel
  */
 class TasksModelFactory {
+    /**
+     * @param ContainerInterface $container
+     * @return TasksModel
+     */
     public function __invoke(ContainerInterface $container): TasksModel
     {
         $db = $container->get('db');

@@ -9,6 +9,10 @@ use Psr\Container\ContainerInterface;
  */
 class EditTaskControllerFactory
 {
+    /**
+     * @param ContainerInterface $container
+     * @return EditTaskController
+     */
     public function __invoke(ContainerInterface $container): EditTaskController
     {
         $model = $container->get('TasksModel');

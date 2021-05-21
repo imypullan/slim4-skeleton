@@ -8,6 +8,10 @@ use Psr\Container\ContainerInterface;
  * @return AddTaskController
  */
 class AddTaskControllerFactory {
+    /**
+     * @param ContainerInterface $container
+     * @return AddTaskController
+     */
     public function __invoke(ContainerInterface $container): AddTaskController
     {
         $model = $container->get('TasksModel');

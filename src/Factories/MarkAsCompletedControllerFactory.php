@@ -8,6 +8,10 @@ use Psr\Container\ContainerInterface;
  * @return MarkAsCompletedController
  */
 class MarkAsCompletedControllerFactory {
+    /**
+     * @param ContainerInterface $container
+     * @return MarkAsCompletedController
+     */
     public function __invoke(ContainerInterface $container): MarkAsCompletedController
     {
         $model = $container->get('TasksModel');

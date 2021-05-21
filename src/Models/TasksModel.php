@@ -38,7 +38,7 @@ class TasksModel {
     }
     public function getTaskForEdit($taskForEdit)
     {
-        $query = $this->db->prepare('SELECT `id`, `task_name` FROM `todo-list` WHERE `id` = :id;');
+        $query = $this->db->prepare('SELECT `id`, `task_name`, `completed` FROM `todo-list` WHERE `id` = :id;');
         $query->bindParam(':id', $taskForEdit);
         $query->execute();
         return $query->fetch();

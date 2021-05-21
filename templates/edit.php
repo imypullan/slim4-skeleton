@@ -12,6 +12,7 @@
     <form action="/editTask" method="post">
         <input type="hidden" name="id" value="<?php echo $task['id']?>">
         <input type="text" name="task_name" value="<?php echo $task['task_name']?>">
+        <input type="hidden" name="completed" value="<?php echo $task['completed']?>">
         <input type="submit" value="Edit">
     </form>
 </div>

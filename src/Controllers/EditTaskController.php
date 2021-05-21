@@ -14,6 +14,9 @@ class EditTaskController
     {
         $taskForEdit = $request->getParsedBody();
         $this->model->updateDB($taskForEdit);
-        return $response->withHeader('Location', '/');
+        if($taskForEdit['completed'] == 1) {
+            return $response->withHeader('Location', '/done');
+        }
+            return $response->withHeader('Location', '/');
     }
 }

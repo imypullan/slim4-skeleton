@@ -11,10 +11,20 @@ use Psr\Http\Message\ResponseInterface as Response;
 class EditTaskController
 {
     protected TasksModel $model;
+    /**
+     * EditTaskController constructor.
+     * @param TasksModel $model
+     */
     public function __construct(TasksModel $model)
     {
         $this->model = $model;
     }
+    /**
+     * @param Request $request
+     * @param Response $response
+     * @param $args
+     * @return Response
+     */
     public function __invoke(Request $request, Response $response, $args): Response
     {
         $taskForEdit = $request->getParsedBody();

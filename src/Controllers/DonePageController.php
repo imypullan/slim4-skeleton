@@ -9,13 +9,24 @@ use Psr\Http\Message\ResponseInterface as Response;
  * @return Response with a view
  */
 class DonePageController {
-    protected $model;
+    protected TasksModel $model;
     protected $view;
+    /**
+     * DonePageController constructor.
+     * @param TasksModel $model
+     * @param $view
+     */
     public function __construct(TasksModel $model, $view)
     {
         $this->model = $model;
         $this->view = $view;
     }
+    /**
+     * @param Request $request
+     * @param Response $response
+     * @param $args
+     * @return Response
+     */
     public function __invoke(Request $request, Response $response, $args): Response
     {
         $tasks = $this->model->getCompletedTasks();

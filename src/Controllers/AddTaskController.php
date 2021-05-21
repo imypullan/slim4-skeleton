@@ -19,7 +19,9 @@ class AddTaskController {
     {
         $data = $request->getParsedBody();
         $newTask = $data['task_name'];
-        $this->model->addTask($newTask);
+        if ($newTask != "") {
+            $this->model->addTask($newTask);
+        }
         return $response->withHeader('Location', '/');
     }
 }

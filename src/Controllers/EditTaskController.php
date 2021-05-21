@@ -18,7 +18,9 @@ class EditTaskController
     public function __invoke(Request $request, Response $response, $args): Response
     {
         $taskForEdit = $request->getParsedBody();
-        $this->model->updateDB($taskForEdit);
+        if ($taskForEdit != "") {
+            $this->model->updateDB($taskForEdit);
+        }
         if($taskForEdit['completed'] == 1) {
             return $response->withHeader('Location', '/done');
         }

@@ -7,26 +7,30 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h1>(Not)todo</h1>
-<div>
-    <?php foreach($tasks as $task)
-    {
-        $id = intval($task['id']);
-        echo '<h3>' . $task['task_name'] . '</h3>';
-        echo '<form action="/delete" method="get">
+<header>
+    <h1>Things I don't need to do anymore</h1>
+</header>
+<main>
+    <div class="todoTask">
+        <?php foreach($tasks as $task)
+        {
+            $id = intval($task['id']);
+            echo '<div><h3>' . $task['task_name'] . '</h3></div>';
+            echo '<div><form action="/edit" method="get">
             <input type="hidden" name="id" value= '.  $id . '>
-            <input type="submit" value="delete">
+            <input class="symbolButton" type="submit" value="&#x270E;">
         </form>';
-        echo '<form action="/edit" method="get">
+            echo '<form action="/delete" method="get">
             <input type="hidden" name="id" value= '.  $id . '>
-            <input type="submit" value="edit">
-        </form>';
-    } ?>
-</div>
+            <input class="symbolButton" type="submit" value="&#128465;">
+        </form></div>';
+        }
+        ?>
+    </div>
 
-<div>
-    <a href="/"><h2>See what you have left to do</h2></a>
-</div>
-
+    <div class="linker">
+        <a href="/"><h2>What do I still need to do?</h2></a>
+    </div>
+</main>
 </body>
 </html>

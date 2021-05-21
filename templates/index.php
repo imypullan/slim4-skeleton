@@ -7,43 +7,44 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h1>Todo</h1>
-<div>
-    <?php foreach($tasks as $task)
-    {
-        $id = intval($task['id']);
-        echo '<h3>' . $task['task_name'] . '</h3>';
-        echo '<form action="/markDone" method="get">
+<header>
+    <h1>Things I need to do</h1>
+</header>
+<main>
+    <div class="todoTask">
+            <?php foreach($tasks as $task)
+            {
+                $id = intval($task['id']);
+                echo '<div><h3>' . $task['task_name'] . '</h3></div>';
+                echo '<div><form action="/markDone" method="get">
             <input type="hidden" name="id" value= '.  $id . '>
-            <input type="submit" value="mark as done">
+            <input class="symbolButton" type="submit" value="&#10003;">
         </form>';
-        echo '<form action="/edit" method="get">
+                echo '<form action="/edit" method="get">
             <input type="hidden" name="id" value= '.  $id . '>
-            <input type="submit" value="edit">
+            <input class="symbolButton" type="submit" value="&#x270E;">
         </form>';
-        echo '<form action="/delete" method="get">
+                echo '<form action="/delete" method="get">
             <input type="hidden" name="id" value= '.  $id . '>
-            <input type="submit" value="delete">
-        </form>';
-        ?>
-
-    <?php
-    }
-    ?>
-</div>
-
-<div>
-    <h2>Add new task</h2>
-    <form action="/" method="post">
-        <label for="task_name">Task</label>
-        <input type="text" name="task_name">
-        <input type="submit">
-    </form>
-</div>
-
-<div>
-    <a href="/done"><h2>See done list</h2></a>
-</div>
-
+            <input class="symbolButton" type="submit" value="&#128465;">
+        </form></div>';
+            }
+            ?>
+    </div>
+    <div class="addTask">
+        <form action="/" method="post">
+            <div>
+                <label for="task_name">Add task</label>
+            </div>
+            <div>
+                <input class="textBox" type="text" name="task_name">
+                <input type="submit" class="symbolButton submitButton" value="&rarr;">
+            </div>
+        </form>
+    </div>
+    <div class="linker">
+        <a href="/done"><h2>What have I done?</h2></a>
+    </div>
+</main>
 </body>
 </html>

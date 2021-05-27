@@ -27,7 +27,12 @@
         }
         ?>
     </div>
-
+    <?php
+    if(count($tasks) < 1)
+    {
+        echo '<div><h3 class="emptyMessage">You haven\'t done anything yet</h3></div>';
+    }
+    ?>
     <div class="linker">
         <a href="/"><h2>What do I still need to do?</h2></a>
     </div>

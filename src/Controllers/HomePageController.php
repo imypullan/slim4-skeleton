@@ -27,7 +27,7 @@ class HomePageController {
      * @param $args
      * @return Response
      */
-    public function __invoke(Request $request, Response $response, $args): Response
+    public function __invoke(Request $request, Response $response, array $args): Response
     {
         $tasks = $this->model->getUncompletedTasks();
         return $this->view->render($response, 'index.php', ['tasks' => $tasks]);

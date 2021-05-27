@@ -69,6 +69,13 @@ input.symbolButton:hover, input.symbolButton:focus {
     font-weight: bold;
 }
 
+/* message if nothing to do */
+.emptyMessage {
+    color: #F3F3F3;
+    font-size: 2rem;
+}
+
+
 /* add new task */
 .addTask {
     color: #F3AD78;

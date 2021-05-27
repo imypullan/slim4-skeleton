@@ -28,13 +28,15 @@ class EditTaskController
     public function __invoke(Request $request, Response $response, $args): Response
     {
         $taskForEdit = $request->getParsedBody();
-        if ($taskForEdit != "") {
-            $taskForEdit = filter_var($taskForEdit, FILTER_SANITIZE_STRING);
+        var_dump($taskForEdit);
+        if (isset($taskForEdit['task_name']))
+        {
+            filter_var($taskForEdit['task_name'], FILTER_SANITIZE_STRING);
             $this->model->updateDB($taskForEdit);
         }
         if($taskForEdit['completed'] == 1) {
             return $response->withHeader('Location', '/done');
         }
-            return $response->withHeader('Location', '/');
+        return $response->withHeader('Location', '/');
     }
 }

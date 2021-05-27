@@ -28,8 +28,8 @@ class AddTaskController {
     public function __invoke(Request $request, Response $response, $args): Response
     {
         $data = $request->getParsedBody();
-        $newTask = $data['task_name'];
-        if ($newTask != "") {
+        if (isset($data['task_name'])) {
+            $newTask = $data['task_name'];
             $newTask = filter_var($newTask, FILTER_SANITIZE_STRING);
             $this->model->addTask($newTask);
         }

@@ -26,9 +26,11 @@ class DeleteTaskController {
     public function __invoke(Request $request, Response $response, $args): Response
     {
         $data = $request->getQueryParams();
-        $deletedTask = $data['id'];
         $previousPage = $request->getHeader('HTTP_REFERER');
-        $this->model->deleteTask($deletedTask);
+        if(isset($data['id']))
+        {
+            $this->model->deleteTask($data['id']);
+        }
         return $response->withHeader('Location', $previousPage);
     }
 }

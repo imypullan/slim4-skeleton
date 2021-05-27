@@ -12,7 +12,9 @@
 </header>
 <main>
     <div class="todoTask">
-            <?php foreach($tasks as $task)
+            <?php
+
+            foreach($tasks as $task)
             {
                 $id = intval($task['id']);
                 echo '<div><h3>' . $task['task_name'] . '</h3></div>';
@@ -31,8 +33,14 @@
             }
             ?>
     </div>
+    <?php
+    if(count($tasks) < 1)
+    {
+        echo '<div><h3 class="emptyMessage">You don\'t have anything to do yet</h3></div>';
+    }
+    ?>
     <div class="addTask">
-        <form action="/" method="post">
+        <form action="/addTask" method="post">
             <div>
                 <label for="task_name">Add task</label>
             </div>

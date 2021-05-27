@@ -1,4 +1,4 @@
-#Todo App
+# Todo App
 
 This application runs on a prebuilt slim MVC framework that uses Composer. Once cloned, you must install the slim components by running:
 
@@ -12,7 +12,7 @@ composer start
 
 ```
 
-#Resources
+## Resources
 - PHP
 - MVC
 - MySQL
